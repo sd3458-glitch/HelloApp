@@ -1,22 +1,23 @@
  /*
  HelloApp.java – A simple Java application that Displays "Hello, World!" to the console.
  @author Satviik Daga
- @version 4.0
+ @version 5.0
  */
  public class HelloApp {
     public static void main(String[] args) {
-        String result="";
-        if (args.length > 0) {
-            for(int i=0;i<args.length;i++){
-                result+=args[i];
-            
-            if(i!=args.length-1){
-                result+=", ";
-                }
-            }
-        } else{
-            result+="World";
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
         }
-        System.out.println("Hello, " + result + "!");
+        StringBuilder names = new StringBuilder();
+        boolean first = true;
+        for (String name : args) {
+            if(!first){
+                    names.append(", ");
+                }
+                names.append(name);
+                first = false; 
+            }
+        System.out.println("Hello, " + names + "!");
     }
-}
+ }
