@@ -1,7 +1,7 @@
 /*
  HelloApp.java – A simple Java application that Displays "Hello, World!" to the console.
  @author Satviik Daga
- @version 6.0
+ @version 7.0
 */
 
 public class HelloApp {
@@ -10,16 +10,7 @@ public class HelloApp {
             System.out.println("Hello, World!");
             return;
         }
-
-        StringBuilder nameBuilder = new StringBuilder();
-        for (String name : args) {
-            nameBuilder.append(name).append(", ");
-            }
-        String result="";
-        if(nameBuilder.length()>0){
-            result=nameBuilder.substring(0,nameBuilder.length()-2);
-        }
-
-        System.out.println("Hello, " + result + "!");
+        String names = String.join(", ", args);
+        System.out.println("Hello, " + names + "!");
     }
 }
